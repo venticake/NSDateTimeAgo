@@ -2,24 +2,25 @@
 import PackageDescription
 
 let package = Package(
-    name: "NSDate+TimeAgo",
+    name: "NSDate_TimeAgo",
     defaultLocalization: "en",
     platforms: [.iOS(.v8)],
     products: [
         .library(
-            name: "NSDate+TimeAgo",
-            targets: ["NSDate+TimeAgo"]
+            name: "NSDate_TimeAgo",
+            targets: ["NSDate_TimeAgo"]
         )
     ],
     targets: [
         .target(
-            name: "NSDate+TimeAgo",
+            name: "NSDate_TimeAgo",
             path: ".",
             exclude: [
                 "Framework",
                 "Tests",
                 "NSDate+TimeAgo.podspec",
                 "README.md",
+                "NSDate+Extension.swift",
                 "LICENSE",
                 "NSDateTimeAgo.xcodeproj",
                 "NSDateTimeAgo.bundle.zip"
