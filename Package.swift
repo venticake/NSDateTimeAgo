@@ -25,6 +25,8 @@ let package = Package(
                 "NSDateTimeAgo.xcodeproj",
                 "NSDateTimeAgo.bundle.zip"
             ]
+            ],
+            publicHeadersPath: "."
         )
     ]
 )

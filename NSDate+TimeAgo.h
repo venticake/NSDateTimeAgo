@@ -1,3 +1,5 @@
+@import Foundation;
+
 @interface NSDate (TimeAgo)
 - (NSString *) timeAgoSimple;
 - (NSString *) timeAgo;
