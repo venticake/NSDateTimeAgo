@@ -14,8 +14,14 @@
 @implementation NSDate (TimeAgo)
 
 #ifndef NSDateTimeAgoLocalizedStrings
+#if SWIFT_PACKAGE
+#define BUNDLE SWIFTPM_MODULE_BUNDLE
+#else
+#define BUNDLE [NSBundle bundleForClass:[DummyClass class]]
+#endif
+
 #define NSDateTimeAgoLocalizedStrings(key) \
-NSLocalizedStringFromTableInBundle(key, @"NSDateTimeAgo", [NSBundle bundleWithPath:[[[NSBundle bundleForClass:[DummyClass class]] resourcePath] stringByAppendingPathComponent:@"NSDateTimeAgo.bundle"]], nil)
+NSLocalizedStringFromTableInBundle(key, @"NSDateTimeAgo", [NSBundle bundleWithPath:[[BUNDLE resourcePath] stringByAppendingPathComponent:@"NSDateTimeAgo.bundle"]], nil)
 #endif
 
 // shows 1 or two letter abbreviation for units.

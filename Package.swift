@@ -24,8 +24,8 @@ let package = Package(
                 "LICENSE",
                 "NSDateTimeAgo.xcodeproj",
                 "NSDateTimeAgo.bundle.zip"
-            ]
             ],
+            resources: [.process("NSDateTimeAgo.bundle")],
             publicHeadersPath: "."
         )
     ]
