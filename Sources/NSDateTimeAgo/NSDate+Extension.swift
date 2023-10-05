@@ -10,28 +10,9 @@
 import Foundation
 
 private struct Helper {
-    
-    static let bundle: Bundle? = {
-        let resourcePath: String?
-        if let frameworkBundle = Bundle(identifier: "com.kevinlawler.NSDateTimeAgo") {
-            // Load from Framework
-            resourcePath = frameworkBundle.resourcePath
-        } else {
-            // Load from Main Bundle
-            resourcePath = Bundle.main.resourcePath
-        }
-        guard let pathString = resourcePath else {
-            return nil
-        }
-        let path = URL(fileURLWithPath: pathString).appendingPathComponent("NSDateTimeAgo.bundle")
-        return Bundle(url: path)
-    }()
-    
+
     static func localizedStrings(for key: String) -> String {
-        guard let bundle = bundle else {
-            return ""
-        }
-        return NSLocalizedString(key, tableName: "NSDateTimeAgo", bundle: bundle, comment: "")
+        return NSLocalizedString(key, tableName: "NSDateTimeAgo", bundle: .module, comment: "")
     }
     
     static func string(from format: String, with value: Int) -> String {

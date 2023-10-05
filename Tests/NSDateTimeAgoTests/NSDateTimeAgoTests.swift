@@ -1,25 +1,7 @@
-//
-//  NSDateTimeAgoTests.swift
-//  NSDateTimeAgoTests
-//
-//  Created by David Keegan on 10/15/15.
-//  Copyright © 2015 Kevin Lawler. All rights reserved.
-//
-
 import XCTest
-import NSDateTimeAgo
+@testable import NSDateTimeAgo
 
-class NSDateTimeAgoTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+final class NSDateTimeAgoTests: XCTestCase {
 
     func dateForComponents(block: (_ components: inout DateComponents) -> Void) -> Date? {
         let calander = Calendar.current
@@ -115,5 +97,5 @@ class NSDateTimeAgoTests: XCTestCase {
         XCTAssertEqual(self.dateForComponents { $0.year = -2 }?.timeAgo, "2 years ago")
         XCTAssertEqual(self.dateForComponents { $0.year = -10 }?.timeAgo, "10 years ago")
     }
-    
+
 }
